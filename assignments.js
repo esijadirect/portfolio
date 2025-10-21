@@ -147,15 +147,40 @@ let productProperty = [
 //user input is parsed as the search and returns the result in the console
 //The search checks the arraay [productProperty] for the keyword entered into the prompt() by the user upon loading the page
 
+//My CODE for search#########################################
+// function search(result) {
+//     for (let i = 0; i < productProperty.length; i++) {
+//         if (productProperty[i].name.includes(result)) {
+//             console.log(productProperty[i].name);
+//         }
+//     }
+// }
+// let result = prompt("search for product");
+// search(result);
+//#########################################################
+
+
+//Modified version with AI~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function search(result) {
+    let lowerResult = result.toLowerCase(); // convert search input to lowercase
     for (let i = 0; i < productProperty.length; i++) {
-        if (productProperty[i].name.includes(result)) {
-            console.log(productProperty[i].name);
+
+        // convert the product name to lowercase to ignore case when checking includes
+        if (productProperty[i].name.toLowerCase().includes(lowerResult)) {
+            console.log(`Product ID - ${productProperty[i].id} : ${productProperty[i].name}`);
         }
     }
 }
-let result = prompt("search for product");
+let result = prompt("Enter product name to search for the product");
 search(result);
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 
 //=======================NOTE====
 //Destructure Array - Auto
